@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Terraform files
 *.tfstate
 *.tfstate.*
@@ -12,3 +13,19 @@ terraform-provider-*.exe
 # Log and temporary files
 *.log
 *.tmp
+=======
+# Terraform files
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tfvars
+terraform-provider-*.exe
+
+# IDE and editor directories
+.vscode/
+.idea/
+
+# Log and temporary files
+*.log
+*.tmp
+>>>>>>> 95f863b1773d431f313771b1e1f6dad7c3b5813a
