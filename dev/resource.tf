@@ -4,7 +4,7 @@ resource "aws_instance" "test-ec2" {
   subnet_id = aws_subnet.dev-2a-public-subnet.id
   associate_public_ip_address = true
   vpc_security_group_ids      = [aws_security_group.dev-web-sg.id]
-  key_name = aws_key_pair.test_keypair.key_name
+  # key_name = aws_key_pair.test_keypair.key_name
 
   tags = {
     Name = "eks-test-ec2"
@@ -26,25 +26,25 @@ resource "aws_eip_association" "test-eip-association" {
   allocation_id = aws_eip.test-eip.id
 }
 
-resource "null_resource" "configure-test-app" {
-  depends_on = [aws_eip_association.test-eip-association]
+# resource "null_resource" "configure-test-app" {
+#   depends_on = [aws_eip_association.test-eip-association]
 
-  // triggers = {
-  //   build_number = timestamp()
-  // }
+#   // triggers = {
+#   //   build_number = timestamp()
+#   // }
 
-  provisioner "file" {
-    source      = "files/"
-    destination = "/home/ubuntu/"
+#   provisioner "file" {
+#     source      = "files/"
+#     destination = "/home/ubuntu/"
 
-    connection {
-      type        = "ssh"
-      user        = "ubuntu"
-      private_key = tls_private_key.sua_key.private_key_pem
-      host        = aws_eip.test-eip.public_ip
-    }
-  }
-}
+#     connection {
+#       type        = "ssh"
+#       user        = "ubuntu"
+#       private_key = tls_private_key.sua_key.private_key_pem
+#       host        = aws_eip.test-eip.public_ip
+#     }
+#   }
+# }
 
 # resource "tls_private_key" "sua_key" {
 #     algorithm = "RSA"
