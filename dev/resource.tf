@@ -1,6 +1,7 @@
 resource "aws_eip" "test-eip" {
   instance = aws_instance.test-ec2.id
-  vpc      = true
+  domain = "vpc" 
+  # vpc      = true   -> deprecated
 }
 
 resource "aws_eip_association" "test-eip-association" {
@@ -22,7 +23,7 @@ resource "aws_instance" "test-ec2" {
 }
 
 resource "null_resource" "configure-test-app" {
-  depends_on = [aws_eip_association.test-eip]
+  depends_on = [aws_eip_association.test-eip-association]
 
   // triggers = {
   //   build_number = timestamp()
