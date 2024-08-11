@@ -1,0 +1,14 @@
+# Terraform files
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tfvars
+terraform-provider-*.exe
+
+# IDE and editor directories
+.vscode/
+.idea/
+
+# Log and temporary files
+*.log
+*.tmp
