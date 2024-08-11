@@ -64,7 +64,7 @@ resource "aws_eip" "nat-2a" {               # 공인ip 할당
 resource "aws_nat_gateway" "dev-nat-gw" {
   allocation_id = aws_eip.nat-2a.id
   subnet_id     = aws_subnet.dev-2c-public-subnet.id
-
+  
   tags = {
     Name = "gw-NAT"
   }
@@ -79,7 +79,7 @@ resource "aws_route_table" "dev-public-rt" {
 
   route {
     cidr_block = "0.0.0.0/0"            # internet gateway
-    gateway_id = "aws_internet_gateway.dev-gw.id"
+    gateway_id = aws_internet_gateway.dev-gw.id
   }
   
   route {
@@ -97,6 +97,7 @@ resource "aws_route_table" "dev-private-rt" {  ## 네트워크 인터페이스 �
 
   route{
     cidr_block = "0.0.0.0/0"            # Nat gateway
+    gateway_id = aws_nat_gateway.dev-nat-gw.id
   }
 
   route {
@@ -161,7 +162,7 @@ resource "aws_security_group" "dev-web-sg" {
   ingress {               
     from_port   = 443
     to_port     = 443
-    protocol    = "https"
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
