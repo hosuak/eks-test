@@ -28,7 +28,7 @@ module "eks_al2" {
       desired_size = 2
 
       labels = {
-        test = sua-eks
+        test = "sua-eks"
       }
 
     }
