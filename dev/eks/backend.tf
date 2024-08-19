@@ -10,7 +10,7 @@ terraform {
 
     // terraform workspace 등록
     workspaces {
-      name = "ec2"
+      name = "eks"
     }
   }
 
