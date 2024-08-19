@@ -31,8 +31,3 @@ variable "cluster_version" {
     type = string
     default = "1.28"
 }
-
-
-vpc_name     = ""
-vpc_cidr     = "192.168.0.0/16"
-cluster_name     = "sua-cluster"
