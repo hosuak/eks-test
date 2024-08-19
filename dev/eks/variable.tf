@@ -10,20 +10,20 @@ variable "azs" {
 
 variable "cluster_name" {
     description = "cluster name"
-    type = string
-    default = null
+    type        = string
+    default     = "default-cluster-name"
 }
 
 variable "vpc_cidr" {
     description = "vpc cidr range"
-    type = string
-    default = "null"
+    type        = string
+    default     = "192.168.0.0/16"
 }
 
 variable "vpc_name" {
     description = "vpc name"
-    type = string
-    default = "null"
+    type        = string
+    default     = "default-vpc-name"
 }
 
 variable "cluster_version" {
@@ -31,3 +31,8 @@ variable "cluster_version" {
     type = string
     default = "1.28"
 }
+
+
+vpc_name     = ""
+vpc_cidr     = "192.168.0.0/16"
+cluster_name     = "sua-cluster"
