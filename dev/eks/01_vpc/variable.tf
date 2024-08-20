@@ -1,4 +1,5 @@
 variable "region" {
+    type = string
     default = "ap-northeast-2"
 }
 
@@ -26,8 +27,3 @@ variable "vpc_name" {
     default     = "default-vpc-name"
 }
 
-variable "cluster_version" {
-    description = "cluster version"
-    type = string
-    default = "1.28"
-}
