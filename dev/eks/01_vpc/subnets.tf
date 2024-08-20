@@ -2,7 +2,7 @@
 resource "aws_subnet" "test-2a-utility-subnet" {
   vpc_id     = aws_vpc.SA_TEST_VPC.id
   cidr_block = "10.0.1.0/24"
-  availability_zone = var.azs_[0]
+  availability_zone = var.azs[0]
   map_public_ip_on_launch = true
 
   tags = {
@@ -16,7 +16,7 @@ resource "aws_subnet" "test-2a-utility-subnet" {
 resource "aws_subnet" "test-2c-utility-subnet" {
   vpc_id     = aws_vpc.SA_TEST_VPC.id
   cidr_block = "10.0.2.0/24"
-  availability_zone = var.azs_[1]
+  availability_zone = var.azs[1]
   map_public_ip_on_launch = true
 
   tags = {
@@ -29,7 +29,7 @@ resource "aws_subnet" "test-2c-utility-subnet" {
 resource "aws_subnet" "test-2a-private-subnet" {
   vpc_id     = aws_vpc.SA_TEST_VPC.id
   cidr_block = "10.0.10.0/24"
-  availability_zone = var.azs_[0]
+  availability_zone = var.azs[0]
 
   tags = {
     Name = "test-2a-private-vpc"
@@ -43,7 +43,7 @@ resource "aws_subnet" "test-2a-private-subnet" {
 resource "aws_subnet" "test-2c-private-subnet" {
   vpc_id     = aws_vpc.SA_TEST_VPC.id
   cidr_block = "10.0.20.0/24"
-  availability_zone = var.azs_[1]
+  availability_zone = var.azs[1]
 
   tags = {
     Name = "test-2c-private-vpc"

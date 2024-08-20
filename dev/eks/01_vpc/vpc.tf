@@ -7,6 +7,5 @@ resource "aws_vpc" "SA_TEST_VPC" {
 
   tags = {
     Name = "SA_TEST_VPC"
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared"     # 해당 리소스가 여러 클러스터나 여러 서비스 간에 공유될 수 있음  <> owned : k8s 클러스터 전용으로 사용
   }
 }
