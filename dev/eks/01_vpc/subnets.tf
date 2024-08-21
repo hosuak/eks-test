@@ -1,28 +1,28 @@
 # subnets.tf
-resource "aws_subnet" "test-2a-utility-subnet" {
+resource "aws_subnet" "test-2a-public-subnet" {
   vpc_id     = aws_vpc.SA_TEST_VPC.id
   cidr_block = "10.0.1.0/24"
   availability_zone = var.azs[0]
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "test-2a-utility-vpc"
+    Name = "test-2a-public-vpc"
     "KubernetsCluster" = var.cluster_name
-    "SubnetType" = "Utility"
+    "SubnetType" = "public"
     "kubernetes.io/role/elb" = "1"
   }
 }
 
-resource "aws_subnet" "test-2c-utility-subnet" {
+resource "aws_subnet" "test-2c-public-subnet" {
   vpc_id     = aws_vpc.SA_TEST_VPC.id
   cidr_block = "10.0.2.0/24"
   availability_zone = var.azs[1]
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "test-2c-utility-vpc"
+    Name = "test-2c-public-vpc"
     "KubernetsCluster" = var.cluster_name
-    "SubnetType" = "Utility"
+    "SubnetType" = "public"
   }
 }
 

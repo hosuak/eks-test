@@ -6,12 +6,12 @@ output "vpc_id" {
 
 output "eks_subnets" {
     description = "List of IDs of all subnets"
-    value = [aws_subnet.test-2a-utility-subnet.id, aws_subnet.test-2c-utility-subnet.id]
+    value = [aws_subnet.test-2a-public-subnet.id, aws_subnet.test-2c-public-subnet.id]
 }
 
 output "public_subnets" {
     description = "List of IDs of all subnets"
-    value = [aws_subnet.test-2a-utility-subnet.id, aws_subnet.test-2c-utility-subnet.id, aws_subnet.test-2a-private-subnet.id, aws_subnet.test-2c-private-subnet.id]
+    value = [aws_subnet.test-2a-public-subnet.id, aws_subnet.test-2c-public-subnet.id, aws_subnet.test-2a-private-subnet.id, aws_subnet.test-2c-private-subnet.id]
 }
 
 output "private_subnets" {
