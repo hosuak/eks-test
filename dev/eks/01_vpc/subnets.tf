@@ -47,7 +47,7 @@ resource "aws_subnet" "test-2c-private-subnet" {
 
   tags = {
     Name = "test-2c-private-vpc"
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+    # "kubernetes.io/cluster/${var.cluster_name}" = "shared"
     "KubernetsCluster" = var.cluster_name
     "SubnetType" = "Private-eks"
     "kubernetes.io/role/internal-elb" = "1"
