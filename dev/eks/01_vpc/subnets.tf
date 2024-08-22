@@ -36,7 +36,7 @@ resource "aws_subnet" "test-2a-private-subnet" {
     "KubernetsCluster" = var.cluster_name
     "SubnetType" = "Private-eks"
     "kubernetes.io/role/internal-elb" = "1"
-    # "karpenter.sh/discovery" = "test-eks-k8s"
+    "karpenter.sh/discovery" = "test-eks-k8s"
   }
 }
 

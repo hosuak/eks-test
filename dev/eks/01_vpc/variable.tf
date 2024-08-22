@@ -12,6 +12,6 @@ variable "azs" {
 variable "cluster_name" {
     description = "cluster name"
     type        = string
-    default     = "test-eks"
+    default     = "sua-cluster"
 }
 
