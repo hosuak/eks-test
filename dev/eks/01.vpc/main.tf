@@ -22,8 +22,8 @@ resource "aws_internet_gateway" "igw" {
 }
 
 resource "aws_subnet" "public_a" {
-  vpc_id            = aws.vpc_id.test.vpc_id
-  cidr_block        = "var.public_subnet_a_cidr"
+  vpc_id            = aws_vpc.test.id
+  cidr_block        = var.public_subnet_a_cidr
   availability_zone = "${var.aws_region}a"
 
   # 이 서브넷에서 인스턴스 생성시 퍼블릭 IP도 자동 할당
@@ -42,8 +42,8 @@ resource "aws_subnet" "public_a" {
 }
 
 resource "aws_subnet" "public_c" {
-  vpc_id                  = aws.vpc_id.test.vpc_id
-  cidr_block              = "var.public_subnet_c_cidr"
+  vpc_id                  = aws_vpc.test.id
+  cidr_block              = var.public_subnet_c_cidr
   availability_zone       = "${var.aws_region}c"
   map_public_ip_on_launch = true
 
