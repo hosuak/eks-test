@@ -17,9 +17,9 @@ locals{
     region = "ap-northeast-2"
 
     vpc_cidr = "10.0.0.0/16"
-    azs = slice(data.aws_availability_zones.avaliable.names, 0, 3)
+    azs = slice(data.aws_availability_zones.available.names, 0, 3)
 
     tags = {
-        User = admin
+        User = "admin"
     }
 }
